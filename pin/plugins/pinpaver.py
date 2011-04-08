@@ -6,7 +6,7 @@ from paver.tasks import main
 
 from pin import command
 
-class PinPaver(command.PinCommand):
+class PinPaverCommand(command.PinCommand):
     command = 'paver'
 
     def setup_parser(self, parser):
