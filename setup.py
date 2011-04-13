@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='pinpaver',
-    version='0.1',
+    version='0.1rc1',
     packages=['pin','pin.plugins'],
     namespace_packages=['pin', 'pin.plugins'],
     install_requires=['paver'],

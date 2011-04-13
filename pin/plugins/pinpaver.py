@@ -13,7 +13,8 @@ class PinPaverCommand(command.PinBaseCommandDelegator):
     '''
     command = 'paver'
 
-    def _get_subcommands():
+    @classmethod
+    def get_subcommands(cls):
         cwd = os.getcwd()
         root = get_project_root(cwd)
         sys.path.append(root)
@@ -23,9 +24,7 @@ class PinPaverCommand(command.PinBaseCommandDelegator):
         maxlen, tasklist = _group_by_module(tasks)
         for name, group in tasklist:
             if name == 'pavement':
-                return [(t.shortname, t.__doc__) for t in group]
-    subcommands = _get_subcommands()
-        
+                return dict((t.shortname, t) for t in group)
 
     def setup_parser(self, parser):
         parser.add_argument('paverargs', nargs='*')
