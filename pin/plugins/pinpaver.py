@@ -17,7 +17,7 @@ class PinPaverCommand(command.PinBaseCommandDelegator):
     def get_subcommands(cls):
         cwd = os.getcwd()
         root = get_project_root(cwd)
-        if root:
+        try:
             sys.path.append(root)
             mod = __import__('pavement')
             env = Environment(mod)
@@ -26,6 +26,8 @@ class PinPaverCommand(command.PinBaseCommandDelegator):
             for name, group in tasklist:
                 if name == 'pavement':
                     return dict((t.shortname, t) for t in group)
+        except ImportError:
+            return dict()
 
     def setup_parser(self, parser):
         parser.add_argument('paverargs', nargs='*')
