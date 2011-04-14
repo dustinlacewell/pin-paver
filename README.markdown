@@ -15,8 +15,8 @@ pin-paver provides 'project-wide' access to commands inside your pavement.py fil
     help     -  This help information. 
     init     - Initialize pin in the current directory. 
     paver    --------------------------------------------------------------------------
-                Commands inside your pavement file.
-                test  - A test command that does nothing.
+             Commands inside your pavement file.
+             test  - A test command that does nothing.
 
 
 ### Commands
