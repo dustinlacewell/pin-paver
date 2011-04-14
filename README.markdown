@@ -21,6 +21,6 @@ pin-paver provides 'project-wide' access to commands inside your pavement.py fil
 
 ### Commands
 
-* **pin paver <paver args>** : Execute any commands inside your pavement.py file
+* **pin paver [paver args]** : Execute any commands inside your pavement.py file
 
 
