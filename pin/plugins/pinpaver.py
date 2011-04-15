@@ -32,9 +32,9 @@ class PinPaverCommand(command.PinBaseCommandDelegator):
     def setup_parser(self, parser):
         parser.add_argument('paverargs', nargs='*')
 
-    def execute(self, cwd, root):
-        if root:
-            os.chdir(root)
+    def execute(self):
+        if self.root:
+            os.chdir(self.root)
             print "echo %s" % self.options.paverargs
             main(self.options.paverargs)
             return True
